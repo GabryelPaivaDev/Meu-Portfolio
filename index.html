@@ -92,12 +92,15 @@
                 <textarea placeholder="Digite sua mensagem!" id="mensagem" rows="6" class="text-form"></textarea>
             </div>
             <div class="grupo-form" style="display: flex; justify-content: center; margin: 20px 0;>
-            <div class="g-recaptcha" data-sitekey="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb" data-theme="dark" data-size="normal"></div>
+            <div class="g-recaptcha" data-sitekey="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb" 
+                     data-theme="light" 
+                     data-size="normal"
+                     data-hl="pt-BR"></div>
             </div>
             <button type="submit" class="botao-form">Enviar via Whastapp</button>
         </form>
     </section>
-    <script src="https://www.google.com/recaptcha/api.js?hl=pt" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&render=explicit&hl=pt-BR" async defer></script>
     <script>
     function enviarWhats(event) {
         event.preventDefault();
@@ -129,9 +132,16 @@
                 nav.classList.remove('nav-scrolled');
             }
         });
-
+    function recaptchaCallback() {
+        grecaptcha.render('recaptcha-element', {
+            'sitekey': 'seu-site-key',
+            'hl': 'pt-BR'
+        });
+    }
+        
     </script>
 </body>
 </html>
+
 
 
