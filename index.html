@@ -83,38 +83,66 @@
 
     <section id="contatos" class="contatos">
         <h2 class="contatos-titulo">Entre em Contatos</h2>
-        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+        <form class="formulario-contato" id="formulario" onsubmit="return enviarWhats(event)">
             <div class="grupo-form">
-                <input placeholder="nome" class="campo-form" id="nome">
+                <input placeholder="nome" class="campo-form" id="nome" required>
             </div>
             
             <div class="grupo-form">
-                <textarea placeholder="Digite sua mensagem!" id="mensagem" rows="6" class="text-form"></textarea>
+                <textarea placeholder="Digite sua mensagem!" id="mensagem" rows="6" class="text-form" required></textarea>
             </div>
             
-            <!-- APENAS UM reCAPTCHA centralizado -->
+           
             <div style="display: flex; justify-content: center; margin: 20px 0;">
-                <div class="g-recaptcha" data-sitekey="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb" data-theme="light" data-size="normal"></div>
+                <div class="g-recaptcha" data-sitekey="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb" data-theme="light" data-size="normal" id="recaptcha"></div>
+            </div>
+            
+            <div id="recaptcha-error" style="color: red; text-align: center; display: none; margin-bottom: 10px;">
+                Por favor, complete o reCAPTCHA!
             </div>
             
             <button type="submit" class="botao-form">Enviar via Whatsapp</button>
         </form>
     </section>
     
-    <!-- APENAS UM script do reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
     
     <script>
     function enviarWhats(event) {
         event.preventDefault();
+        
+        
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (recaptchaResponse.length === 0) {
+            document.getElementById('recaptcha-error').style.display = 'block';
+            return false;
+        } else {
+            document.getElementById('recaptcha-error').style.display = 'none';
+        }
+        
+        
         const nome = document.getElementById('nome').value;
         const mensagem = document.getElementById('mensagem').value;
+        
+        if (!nome || !mensagem) {
+            alert('Por favor, preencha todos os campos!');
+            return false;
+        }
+        
+        
         const telefone = '5579999678249'; 
         const texto = `Olá, meu nome é ${nome}. ${mensagem}`;   
         const msgFormatada = encodeURIComponent(texto);
         const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-        window.open(url, '_blank');
+        
         console.log(url);
+        window.open(url, '_blank');
+        
+        
+        document.getElementById('formulario').reset();
+        grecaptcha.reset();
+        
+        return false;
     }
 
     window.addEventListener('scroll', function() {
