@@ -81,33 +81,24 @@
         </div>
     </section>
 
-    <section id="contatos" class="contatos">
+    <section id="contatos" class="contatos" onsubmit="enviarWhats(event)">
         <h2 class="contatos-titulo">Entre em Contatos</h2>
-        <form class="formulario-contato" id="formulario" onsubmit="return enviarWhats(event)">
+        <form class="formulario-contato" id="formulario">
             <div class="grupo-form">
-                <input placeholder="nome" class="campo-form" id="nome" required>
+                <input placeholder="nome" class="campo-form" id="nome">
             </div>
             
             <div class="grupo-form">
-                <textarea placeholder="Digite sua mensagem!" id="mensagem" rows="6" class="text-form" required></textarea>
+                <textarea placeholder="Digite sua mensagem!" id="mensagem" rows="6" class="text-form"></textarea>
             </div>
-            
-           
-            <div style="display: flex; justify-content: center; margin: 20px 0;">
-                <div class="g-recaptcha" data-sitekey="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb" data-theme="light" data-size="normal" id="recaptcha"></div>
+            <div class="grupo-form">
+            <div class="g-recaptcha" data-sitekey="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb"></div>
             </div>
-            
-            <div id="recaptcha-error" style="color: red; text-align: center; display: none; margin-bottom: 10px;">
-                Por favor, complete o reCAPTCHA!
-            </div>
-            
-            <button type="submit" class="botao-form">Enviar via Whatsapp</button>
+            <button type="submit" class="botao-form">Enviar via Whastapp</button>
         </form>
     </section>
-    
-    <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
-    
-     <script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
     function scrollParaSecao(event) {
         event.preventDefault();
         const targetId = this.getAttribute('href');
@@ -173,6 +164,7 @@
                 nav.classList.remove('nav-scrolled');
             }
         });
+    
+</script>
 </body>
 </html>
-
