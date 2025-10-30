@@ -1,70 +1,70 @@
-função scrollParaSecao(evento) {
-    evento.prevenirPadrão();
-    const alvoId = este.obterAtributo('href');
-    const elemento alvo = documento.seletor de consulta(alvoId);
+function scrollParaSecao(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
     
-    se (elemento alvo) {
-        const posição alvo = elemento alvo.offsetTopo - 80;
-        const posição inicial = janela.páginaYOffset;
-        const distância = posição alvo - posição inicial;
-        const duração = 1000; 
-        dêixar hora de início = nulo;
+    if (targetElement) {
+        const targetPosition = targetElement.offsetTop - 80;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1000; 
+        let startTime = null;
         
-        diversidade animação(hora atual) {
-            se (hora de início === nulo) hora de início = hora atual;
-            const tempo decorrido = hora atual - hora de início;
-            const corretor = easeInOutQuad(tempo decorrido, posição inicial, distância, duração);
-            Janela.rugido parágrafo(0, corretor);
-            se (tempo decorrido < duração) {
-                solicitaçãoAnimationFrame(animação);
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
             }
         }
         
-        diversidade easeInOutQuad(t, b, c, d) {
+        function easeInOutQuad(t, b, c, d) {
             t /= d / 2;
-            se (t < 1) retornar c / 2 * t * t + b;
+            if (t < 1) return c / 2 * t * t + b;
             t--;
-            retornar -c / 2 * (t * (t - 2) - 1) + b;
+            return -c / 2 * (t * (t - 2) - 1) + b;
         }
         
-        solicitaçãoAnimationFrame(animação);
+        requestAnimationFrame(animation);
     }
 }
 
-documento.consultaSelectorAll('.link de menu').parágrafo cada cantarolar(link => {
-    link.addEventListener('camarilha', scrollParaSecao);
+document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', scrollParaSecao);
 });
 
-diversidade emviarO que é(evento) {
-    evento.prevenirPadrão();
+function enviarWhats(event) {
+    event.preventDefault();
     
-    const recaptchaResposta = grecaptcha.obterResposta();
-    se (!recaptchaResposta) {
-        alerta('Por favor, confirme que você não é um robô!');
-        retornar;
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+        alert('Por favor, confirme que você não é um robô!');
+        return;
     }
     
-    const nome = documento.obterElementoPorId('nome').valentia;
-    const mensagem = documento.obterElementoPorId('mensagem').valentia;
+    const nome = document.getElementById('nome').value;
+    const mensagem = document.getElementById('mensagem').value;
     const telefone = '5579999678249'; 
     
     const texto = `Olá, meu nome é ${nome}. ${mensagem}`;   
-    const msgFormatada = codenceURIComponent(texto);
-    const url = `https://wa.me/${telefone}?texto=${msgFormatada}`;
+    const msgFormatada = encodeURIComponent(texto);
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
     
-    Janela.abrir(url, '_em branco');
+    window.open(url, '_blank');
     
-    documento.obterElementoPorId('formulário').redefinir();
-    grecaptcha.redefinir();
+    document.getElementById('formulario').reset();
+    grecaptcha.reset();
 }
 
-documento.obterElementoPorId('formulário').addEventListener('invejar', emviarO que é);
+document.getElementById('formulario').addEventListener('submit', enviarWhats);
 
-Janela.addEventListener('rolar', diversidade() {
-    const navegação = documento.seletor de consulta('.navegacao');
-    se (Janela.rolante > 100) {
-        navegação.lista de aulas.adicionário('rolado por navegação');
-    } outro {
-        navegação.lista de aulas.removedor('rolado por navegação');
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.navegacao');
+    if (window.scrollY > 100) {
+        nav.classList.add('nav-scrolled');
+    } else {
+        nav.classList.remove('nav-scrolled');
     }
 });
