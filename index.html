@@ -8,6 +8,7 @@
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
         <circle cx='50' cy='50' r='50' fill='%236a0dad'/><text x='50' y='68' 
         font-size='50' text-anchor='middle' fill='white'>🧑🏻‍💻</text></svg>">
+        <script src="script.js" defer></script>
     <title>Gabryel Paiva | Portfólio</title>
 </head>
 <body>
@@ -39,131 +40,77 @@
         <h2 class="sobre-titulo">Sobre mim</h2>
         <div class="sobre-caixa">
             <p class="sobre-paragrafo">
-            Estudante de Análise e Desenvolvimento de Sistemas, motivado
-            e focado em objetivos, buscando iniciar uma carreira em
-            Tecnologia da Informação como Desenvolvedor Front-End.
-            Apaixonado por aprender tecnologias e frameworks modernos,
-            com o objetivo de longo prazo de se tornar um Desenvolvedor
-            Full Stack qualificado. Focado em adquirir experiência,
-            aprimorar habilidades de resolução de problemas e buscar
-            oportunidades de carreira internacionais na indústria de
-            tecnologia.
+ Estudante de Análise e Desenvolvimento de Sistemas, motivado
+ e focado em objetivos, buscando iniciar uma carreira em
+ Tecnologia da Informação como Desenvolvimento Front-End.
+ Apaixonado por aprender tecnologias e frameworks modernos,
+ com o objetivo de longo prazo de se tornar um Desenvolvedor
+ Qualificado Full Stack. Focado em adquirir experiência,
+ habilidades primárias de resolução de problemas e negócios
+ oportunidades de carreira internacionais na indústria de
+ tecnologia.
             </p>
         </div>
     </section>
     
     <section id="projetos" class="projetos">
-        <h2 class="projetos-titulo">Meus Projetos</h2>
-        <div class="projetos-caixa">
-            <div class="projeto-card">
-                <a href="https://gabryelpaivadev.github.io/AutomasterLinks/" target="_blank" class="projeto-link">
-                    <img src="img/Portfólio1.png" alt="Projeto-1-AutoMasterLinks" class="projeto-imagem">
+        <h2 classe="projetos-título">Meus Projetos</h2>
+        <dividir classe="projetos-caixa">
+            <dividir classe="cartão-projeto">
+                <a href="https://gabryelpaivadev.github.io/AutomasterLinks/" alvo="_em branco" classe="link do projeto">
+                    <imagem fonte="img/Portfólio1.png" alt="Projeto-1-AutoMasterLinks" classe="projeto-imagem">
                 </a>
-                <h3 class="info-projetos">AutoMasterLinks</h3>
-                <p class="info-projetos">Um linktree para um empresa de seguros.</p>
-            </div>
-            
-            <div class="projeto-card">
-                <a href="https://gabryelpaivadev.github.io/Site-Sustentabilidade-hoje/" target="_blank" class="projeto-link">
-                    <img src="img/Portfólio2.png" alt="Projeto-2-Sustentabilidade-Site" class="projeto-imagem">
+                <h3 classe="info-projetos">Links do AutoMaster</h3>
+                <p classe="info-projetos">Um linktree para uma empresa de seguros.</p>
+            </dividir>
+            <dividir classe="cartão-projeto">
+                <a href="https://gabryelpaivadev.github.io/Mini-Jogo-da-Carro/" alvo="_em branco" classe="link do projeto">
+                    <imagem fonte="img/Portifólio5.png" alt="Projeto-MiniJogo-Carro" classe="projeto-imagem">
                 </a>
-                <h3 class="info-projetos">Site de sustentabilidade</h3>
-                <p class="info-projetos">Um site responsivo, com tema de sustentabilidade</p>
-            </div>
-            
-            <div class="projeto-card">
-                <a href="https://gabryelpaivadev.github.io/Gabryel-Paiva-Historia-das-Webs/" target="_blank" class="projeto-link">
-                    <img src="img/Portfólio3.png" alt="Projeto-3-historia-das-webs" class="projeto-imagem">
+                <h3 classe="info-projetos">Mini-Jogo de Carro</h3>
+                <p classe="info-projetos">Um Mini-Jogo que usa ilusão de ótica.</p>
+            </dividir>
+            <dividir classe="cartão-projeto">
+                <a href="https://gabryelpaivadev.github.io/Lampada/" alvo="_em branco" classe="link do projeto">
+                    <imagem fonte="img/Portifólio4.png" alt="Lampada-Acende&Apaga" classe="projeto-imagem">
                 </a>
-                <h3 class="info-projetos">Site sobre Historia das Web</h3>
-                <p class="info-projetos">Um site Simples, contantando a historia das webs</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo">Entre em Contatos</h2>
-        <form class="formulario-contato" id="formulario">
-            <div class="grupo-form">
-                <input placeholder="nome" class="campo-form" id="nome">
-            </div>
+                <h3 classe="info-projetos">Lampada</h3>
+                <p classe="info-projetos">Um projeto prático de acender e apagar uma lâmpada.</p>
+            </dividir>
+            <dividir classe="cartão-projeto">
+                <a href="https://gabryelpaivadev.github.io/Site-Sustentabilidade-hoje/" alvo="_em branco" classe="link do projeto">
+                    <imagem fonte="img/Portfólio2.png" alt="Projeto-2-Sustentabilidade-Site" classe="projeto-imagem">
+                </a>
+                <h3 classe="info-projetos">Site de sustentabilidade</h3>
+                <p classe="info-projetos">Um site responsivo, com tema de sustentabilidade</p>
+            </dividir>
             
-            <div class="grupo-form">
-                <textarea placeholder="Digite sua mensagem!" id="mensagem" rows="6" class="text-form"></textarea>
-            </div>
-            <div class="grupo-form">
-            <div class="g-recaptcha" data-sitekey="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb"></div>
-            </div>
-            <button type="submit" class="botao-form">Enviar via Whastapp</button>
-        </form>
-    </section>
-    <script src="https://www.google.com/recaptcha/api.js?hl=pt" async defer></script>
-    <script>
-    function scrollParaSecao(event) {
-        event.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            const targetPosition = targetElement.offsetTop - 80;
-            const startPosition = window.pageYOffset;
-            const distance = targetPosition - startPosition;
-            const duration = 1500; 
-            let startTime = null;
-            function animation(currentTime) {
-                if (startTime === null) startTime = currentTime;
-                const timeElapsed = currentTime - startTime;
-                const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-                window.scrollTo(0, run);
-                if (timeElapsed < duration) {
-                    requestAnimationFrame(animation);
-                }
-            }
-            function easeInOutQuad(t, b, c, d) {
-                t /= d / 2;
-                if (t < 1) return c / 2 * t * t + b;
-                t--;
-                return -c / 2 * (t * (t - 2) - 1) + b;
-            }
-            requestAnimationFrame(animation);
-        }
-    }
+            <dividir classe="cartão-projeto">
+                <a href="https://gabryelpaivadev.github.io/Gabryel-Paiva-Historia-das-Webs/" alvo="_em branco" classe="link do projeto">
+                    <imagem fonte="img/Portfólio3.png" alt="Projeto-3-historia-das-webs" classe="projeto-imagem">
+                </a>
+                <h3 classe="info-projetos">Site sobre História das Web</h3>
+                <p classe="info-projetos">Um site Simples, contando a história das webs</p>
+            </dividir>
+        </dividir>
+    </seção>
 
-    document.querySelectorAll('.menu-link').forEach(link => {
-        link.addEventListener('click', scrollParaSecao);
-    });
-
-    function enviarWhats(event) {
-        event.preventDefault();
-        
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-            alert('Por favor, confirme que você não é um robô!');
-            return;
-        }
-        
-        const nome = document.getElementById('nome').value;
-        const mensagem = document.getElementById('mensagem').value;
-        const telefone = '5579999678249'; 
-        const texto = `Olá, meu nome é ${nome}. ${mensagem}`;   
-        const msgFormatada = encodeURIComponent(texto);
-        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-        window.open(url, '_blank');
-        
-        document.getElementById('formulario').reset();
-        grecaptcha.reset();
-    }
-
-    document.getElementById('formulario').addEventListener('submit', enviarWhats);
-
-    window.addEventListener('scroll', function() {
-        const nav = document.querySelector('.navegacao');
-        if (window.scrollY > 100) {
-            nav.classList.add('nav-scrolled');
-        } else {
-            nav.classList.remove('nav-scrolled');
-        }
-    });
-    </script>
-</body>
-</html>
+    <seção id="contatos" classe="contatos" em enviar="enviarWhats(evento)">
+        <h2 classe="contatos-titulo">Entre em Contatos</h2>
+        <forma classe="formulario-contato" id="formulário">
+            <dividir classe="grupo-formulário">
+                <entrada espaço reservado="nome" classe="forma de campo" id="nome">
+            </dividir>
+            
+            <dividir classe="grupo-formulário">
+                <área de texto espaço reservado="Digite sua mensagem!" id="mensagem" linhas="6" classe="forma de texto"></área de texto>
+            </dividir>
+            <dividir classe="grupo-formulário">
+            <dividir classe="g-recaptcha" chave do site de dados="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb"></dividir>
+            </dividir>
+            <botão tipo="enviar" classe="forma botao">Enviar via Whastapp</botão>
+        </forma>
+    </seção>
+    <roteiro fonte="https://www.google.com/recaptcha/api.js" assíncrono adiar></roteiro>
+</corpo>
+</HTML>
