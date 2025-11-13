@@ -1,0 +1,184 @@
+function scrollParaSecao(event) {
+    event.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+        const targetPosition = targetElement.offsetTop - 80;
+        const startPosition = window.pageYOffset;
+        const distance = targetPosition - startPosition;
+        const duration = 1000;
+        let startTime = null;
+        
+        function animation(currentTime) {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+            window.scrollTo(0, run);
+            if (timeElapsed < duration) {
+                requestAnimationFrame(animation);
+            }
+        }
+        
+        function easeInOutQuad(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+        
+        requestAnimationFrame(animation);
+    }
+}
+
+function validarFormulario(event) {
+    event.preventDefault();
+    
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+    
+    if (!nome) {
+        alert('Por favor, digite seu nome');
+        return;
+    }
+    
+    if (!email) {
+        alert('Por favor, digite seu email');
+        return;
+    }
+    
+    if (!validarEmail(email)) {
+        alert('Por favor, digite um email válido');
+        return;
+    }
+    
+    if (!mensagem) {
+        alert('Por favor, digite sua mensagem');
+        return;
+    }
+    
+    const recaptchaResponse = grecaptcha.getResponse();
+    if (!recaptchaResponse) {
+        alert('Por favor, confirme que você não é um robô!');
+        return;
+    }
+    
+    enviarWhatsapp(nome, email, mensagem);
+}
+
+function validarEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+function enviarWhatsapp(nome, email, mensagem) {
+    const telefone = '5579999678249';
+    const texto = `Olá, meu nome é ${nome}. Email: ${email}. ${mensagem}`;
+    const msgFormatada = encodeURIComponent(texto);
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+    
+    window.open(url, '_blank');
+    document.getElementById('formulario').reset();
+    grecaptcha.reset();
+}
+
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.navegacao');
+    if (window.scrollY > 100) {
+        nav.classList.add('nav-scrolled');
+    } else {
+        nav.classList.remove('nav-scrolled');
+    }
+});
+
+function initCarrossel3D() {
+    const carrossel = document.getElementById('carrossel3d');
+    const items = carrossel.querySelectorAll('.projeto-3d-item');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    
+    let currentIndex = 0;
+    const totalItems = items.length;
+    const angleStep = 360 / totalItems;
+    
+    function getRadius() {
+        const width = window.innerWidth;
+        if (width <= 480) {
+            return 150;
+        } else if (width <= 768) {
+            return 170;
+        }
+        return 200;
+    }
+    
+    let radius = getRadius();
+    
+    window.addEventListener('resize', () => {
+        radius = getRadius();
+        updateCarrossel();
+    });
+    
+    function updateCarrossel() {
+        items.forEach((item, index) => {
+            const angle = (index - currentIndex) * angleStep;
+            const radian = (angle * Math.PI) / 180;
+            
+            const x = Math.sin(radian) * radius;
+            const z = Math.cos(radian) * radius;
+            
+            const rotateY = -angle;
+            
+            const normalizedZ = (z + radius) / (2 * radius);
+            const brightnessFactor = Math.pow(normalizedZ, 0.8);
+            const brightness = 0.2 + (brightnessFactor * 0.8);
+            const opacity = 0.5 + (brightnessFactor * 0.5);
+            
+            item.style.transform = `translate(-50%, -50%) translateX(${x}px) translateZ(${z}px) rotateY(${rotateY}deg)`;
+            
+            if (index === currentIndex) {
+                item.classList.add('active');
+                item.style.filter = 'brightness(1)';
+                item.style.opacity = '1';
+            } else {
+                item.classList.remove('active');
+                item.style.filter = `brightness(${brightness.toFixed(2)})`;
+                item.style.opacity = opacity.toFixed(2);
+            }
+        });
+    }
+    
+    function nextItem() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarrossel();
+    }
+    
+    function prevItem() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarrossel();
+    }
+    
+    btnNext.addEventListener('click', nextItem);
+    btnPrev.addEventListener('click', prevItem);
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevItem();
+        } else if (e.key === 'ArrowRight') {
+            nextItem();
+        }
+    });
+    
+    updateCarrossel();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.menu-link').forEach(link => {
+        link.addEventListener('click', scrollParaSecao);
+    });
+    
+    document.getElementById('formulario').addEventListener('submit', validarFormulario);
+    
+   
+    initCarrossel3D();
+});
