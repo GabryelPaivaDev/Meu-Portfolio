@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" 
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+        <circle cx='50' cy='50' r='50' fill='%236a0dad'/><text x='50' y='68' 
+        font-size='50' text-anchor='middle' fill='white'>🧑🏻‍💻</text></svg>">
+    <title>Gabryel Paiva | Portfólio</title>
+</head>
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Inicio</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#habilidades" class="menu-link">Habilidades</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contatos" class="menu-link">Contatos</a></li>
+        </ul>
+        <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </nav>
+    
+    <main id="inicio" class="cabecalho">
+        <img src="assets/Foto de Perfil, Gemini.jpg" alt="Foto de Perfil" class="foto-perfil">
+        <h1>Gabryel Paiva</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front-End</p>
+    </main>
+    
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+            Estudante de Análise e Desenvolvimento de Sistemas, motivado
+            e focado em objetivos, buscando iniciar uma carreira em
+            Tecnologia da Informação como Desenvolvedor Front-End.
+            Apaixonado por aprender tecnologias e frameworks modernos,
+            com o objetivo de longo prazo de se tornar um Desenvolvedor
+            Full Stack qualificado. Focado em adquirir experiência,
+            aprimorar habilidades de resolução de problemas e buscar
+            oportunidades de carreira internacionais na indústria de
+            tecnologia.
+            </p>
+        </div>
+    </section>
+
+    <section id="habilidades" class="habilidades">
+        <h2 class="habilidades-titulo">Minhas Habilidades</h2>
+        <div class="habilidades-caixa">
+            <div class="habilidade-item">
+                <div class="habilidade-icone">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                </div>
+                <div class="habilidade-bar">
+                    <div class="habilidade-progresso html" style="width: 70%"></div>
+                </div>
+                <span class="habilidade-nivel">Intermediário</span>
+            </div>
+            <div class="habilidade-item">
+                <div class="habilidade-icone">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                </div>
+                <div class="habilidade-bar">
+                    <div class="habilidade-progresso css" style="width: 65%"></div>
+                </div>
+                <span class="habilidade-nivel">Intermediário</span>
+            </div>
+            <div class="habilidade-item">
+                <div class="habilidade-icone">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                </div>
+                <div class="habilidade-bar">
+                    <div class="habilidade-progresso js" style="width: 40%"></div>
+                </div>
+                <span class="habilidade-nivel">Básico</span>
+            </div>
+            <div class="habilidade-item">
+                <div class="habilidade-icone">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                </div>
+                <div class="habilidade-bar">
+                    <div class="habilidade-progresso python" style="width: 30%"></div>
+                </div>
+                <span class="habilidade-nivel">Básico</span>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="carrossel-3d-container">
+            <button class="carrossel-btn carrossel-btn-prev" id="btnPrev" aria-label="Projeto anterior">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="carrossel-3d-wrapper">
+                <div class="carrossel-3d" id="carrossel3d">
+                    <div class="projeto-3d-item">
+                        <a href="project/BeiraMarPescados/index.html" class="projeto-link">
+                            <img src="project/BeiraMarPescados/Portifólio8.jpg" alt="Beira-Mar-Pescados-Projeto" class="projeto-imagem">
+                        </a>
+                        <h3 class="info-projetos">BeiraMarPescados</h3>
+                        <p class="info-projetos">Um site para uma empresa de pescados</p>
+                    </div>
+                    <div class="projeto-3d-item">
+                        <a href="project/Auto-master-links/index.html" class="projeto-link">
+                            <img src="project/Auto-master-links/Portfólio1.png" alt="Projeto-1-AutoMasterLinks" class="projeto-imagem">
+                        </a>
+                        <h3 class="info-projetos">AutoMasterLinks</h3>
+                        <p class="info-projetos">Um linktree para um empresa de seguros.</p>
+                    </div>
+                    <div class="projeto-3d-item">
+                        <a href="project/projeto-mini-jogo-do-carro/index.html" class="projeto-link">
+                            <img src="project/projeto-mini-jogo-do-carro/Portfólio5.jpg" alt="Projeto-MiniJogo-Carro" class="projeto-imagem">
+                        </a>
+                        <h3 class="info-projetos">Mini-Jogo de Carro</h3>
+                        <p class="info-projetos">Um Mini-Jogo que usar ilusão de ótica.</p>
+                    </div>
+                    <div class="projeto-3d-item">
+                        <a href="project/Calculadora/index.html" class="projeto-link">
+                            <img src="project/Calculadora/Portifólio6.jpg" alt="Calculadora" class="projeto-imagem">
+                        </a>
+                        <h3 class="info-projetos">Calculadora</h3>
+                        <p class="info-projetos">Uma calculadora simples, usando HTML, CSS e JavaScript.</p>
+                    </div>
+                    <div class="projeto-3d-item">
+                        <a href="project/projeto-lampada/index.html" class="projeto-link">
+                            <img src="project/projeto-lampada/Portfólio4.jpg" alt="Lampada-Acende&Apaga" class="projeto-imagem">
+                        </a>
+                        <h3 class="info-projetos">Lampada</h3>
+                        <p class="info-projetos">Um projeto prático de acender e apagar uma lâmpada.</p>
+                    </div>
+                    <div class="projeto-3d-item">
+                        <a href="project/site-sustentabilidade/index.html"  class="projeto-link">
+                            <img src="project/site-sustentabilidade/Portfólio2.jpg" alt="Projeto-2-Sustentabilidade-Site" class="projeto-imagem">
+                        </a>
+                        <h3 class="info-projetos">Site de sustentabilidade</h3>
+                        <p class="info-projetos">Um site responsivo, com tema de sustentabilidade</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carrossel-btn carrossel-btn-next" id="btnNext" aria-label="Próximo projeto">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Contatos</h2>
+        <div class="contatos-container">
+            <div class="contato-formulario">
+                <h3 class="formulario-titulo">Fale comigo</h3>
+                <form class="formulario-contato" id="formulario">
+                    <div class="grupo-form">
+                        <input placeholder="Nome" class="campo-form" id="nome" required>
+                    </div>
+                    <div class="grupo-form">
+                        <input type="email" placeholder="Email" class="campo-form" id="email" required>
+                    </div>
+                    <div class="grupo-form">
+                        <textarea placeholder="Digite sua mensagem!" id="mensagem" rows="6" class="text-form" required></textarea>
+                    </div>
+                    <div class="grupo-form">
+                        <div class="g-recaptcha" data-sitekey="6LfrcucrAAAAAF4cMop15E1a34SYp1CgYsX4Z-yb" data-lang="pt-BR"></div>
+                    </div>
+                    <button type="submit" class="botao-form">Enviar via Whatsapp</button>
+                </form>
+            </div>
+            <div class="contato-localizacao">
+                <h3 class="localizacao-titulo">Minha Localização</h3>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.844092196497!2d-37.05732913518332!3d-10.972106714579034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab143dce5a8f5%3A0xdce07c193ed061d0!2sUnit%20-%20Universidade%20Tiradentes!5e0!3m2!1spt-BR!2sbr!4v1762535100657!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="outros-contatos">
+            <h3 class="outros-contatos-titulo">Outras formas de contato</h3>
+            <div class="contatos-links">
+                <a href="https://discord.com/users/zer0#7640" target="_blank" class="contato-link">
+                    <img src="https://img.shields.io/badge/-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
+                </a>
+                <a href="https://www.instagram.com/gabryelpaiva07/?theme=dark" target="_blank" class="contato-link">
+                    <img src="https://img.shields.io/badge/-Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram">
+                </a>
+                <a href="mailto:Gabryelpaiva7@gmail.com" class="contato-link">
+                    <img src="https://img.shields.io/badge/-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+                </a>
+                <a href="https://www.linkedin.com/in/gabryel-paiva-dev" target="_blank" class="contato-link linkedin-badge-custom">
+                    <span class="linkedin-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </span>
+                    <span class="linkedin-text">Linkedin</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-conteudo">
+            <p>&copy; 2025 Gabryel Paiva. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
+    <script src="script.js"></script>
+</body>
+</html>
